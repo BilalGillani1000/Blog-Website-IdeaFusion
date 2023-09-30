@@ -1,0 +1,22 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+<p class="homeContent"><%= homeContent %></p>
+
+<% if(newPosts.length>=1) { %>
+    <div class="blogsHeader">
+        <h1 class="blogsHeading">BLOGS</h1>
+    </div>
+<% } %>
+
+<% for(var i=0;i<newPosts.length;i++) { %>
+
+    <h1 class="postTitle"><%= newPosts[i].title %></h1>
+    <p class="newPostText"><%= newPosts[i].newPost.substring(0,99)+"..." %></p>
+    <a href="/posts/<%= newPosts[i].title %>">Read More</a>
+
+ <% } %>
+
+
+
+<%- include("partials/footer") -%>
